@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class travelprice {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double km = Double.parseDouble(scanner.nextLine());
+        String dayOrNight = scanner.nextLine();
+        double price = 0.0d;
+        double taxirate = 0.0d;
+        if (dayOrNight.equals("day")) {
+            taxirate = 0.79;
+        } else if (dayOrNight.equals("Night")) {
+            taxirate = 0.90;
+        }
+        if (km < 20) {
+            price = 0.70 + (km * taxirate);
+        } else if (km < 100) {
+            price = km * 0.09;
+        } else {
+            price = km * 0.06;
+        }
+        System.out.println(price);
+        scanner.close();
+
+    }
+}
